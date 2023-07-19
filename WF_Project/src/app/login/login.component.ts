@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <div class="center-form">
 			<form name="iform" method="post" onsubmit="return login()">
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
 				<br>
 				<button type="reset">Reset</button>
 				<button onclick="signUp()"><a id="redirect" href="home.html">Submit</a></button>
+				<h1>Don't have an account? <a [routerLink]="['/register']">Click Here</a> </h1>
 			</form>
 		</div>
   `,
